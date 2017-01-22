@@ -1,4 +1,4 @@
-package fr.frodriguez.library;
+package fr.frodriguez.library.utils;
 
 /**
  * By Florian on 22/01/2017.

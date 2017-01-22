@@ -1,14 +1,16 @@
-package fr.frodriguez.library;
+package fr.frodriguez.library.utils;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 
+import fr.frodriguez.library.Logger;
+
 /**
  * By Florian on 22/01/2017.
  */
 
-public class Utils {
+public class AppUtils {
 
     /**
      * Get the application version and the application name in a string
@@ -22,7 +24,7 @@ public class Utils {
                 version = String.valueOf(context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode);
                 version += "-" + context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
             } catch (PackageManager.NameNotFoundException e) {
-                Logger.e(Utils.class.getName()+".getAppVersion()", context, "Version name not found");
+                Logger.e(AppUtils.class.getName()+".getAppVersion()", context, "Version name not found");
             }
         }
         return version;
