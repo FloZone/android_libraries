@@ -6,7 +6,7 @@ package fr.frodriguez.library.utils;
 
 public class StringUtils {
 
-    public boolean isEmpty(String string) {
+    public static boolean isEmpty(String string) {
         return string == null || string.isEmpty();
     }
 }
