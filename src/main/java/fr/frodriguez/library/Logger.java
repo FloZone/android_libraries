@@ -6,9 +6,9 @@ import android.util.Log;
 import fr.frodriguez.library.utils.AppUtils;
 
 /**
- * By Florian on 22/01/2017.
+ * By FloZone on 22/01/2017.
  */
-
+@SuppressWarnings("unused")
 public class Logger {
 
     private final static String PREFIX = "flz";

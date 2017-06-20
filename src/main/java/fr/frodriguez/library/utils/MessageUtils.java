@@ -5,9 +5,8 @@ import android.view.View;
 import android.widget.Toast;
 
 /**
- * By Florian on 22/01/2017.
+ * By FloZone on 22/01/2017.
  */
-
 public class MessageUtils {
 
     public static void showToast(Context context, String msg) {
