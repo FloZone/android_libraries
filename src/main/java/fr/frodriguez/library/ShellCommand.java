@@ -11,18 +11,20 @@ import fr.frodriguez.library.utils.StringUtils;
 
 public class ShellCommand {
     private String[] commands;
+    private String command;
     private String output, error, localError;
     private int exitValue;
     private boolean asRoot;
 
 
-    public ShellCommand(String[] commands){
+    private ShellCommand(String[] commands){
         this.commands = commands;
     }
 
-    public String[] getCommands() {
-        return commands;
+    private ShellCommand(String command){
+        this.command = command;
     }
+
     public String getOutput() {
         return output;
     }
@@ -45,12 +47,12 @@ public class ShellCommand {
                 && localError == null;
     }
 
-    /**
+    /*
      * Execute a shell command
-     * @param commands the commands to run
+     * @param commands the commands to runSimpleCommand
      * @return a ShellCommand object containing execution outputs
      */
-    public static ShellCommand run(String[] commands) {
+    /*public static ShellCommand runSimpleCommand(String[] commands) {
         ShellCommand shellCommand = new ShellCommand(commands);
         shellCommand.asRoot = false;
 
@@ -70,11 +72,39 @@ public class ShellCommand {
             shellCommand.localError = e.getMessage();
         }
         return shellCommand;
+    }*/
+
+    /**
+     * Execute a shell command
+     * @param command the simple command to runSimpleCommand
+     * @return a ShellCommand object containing execution outputs
+     */
+    public static ShellCommand runSimpleCommand(String command) {
+        ShellCommand shellCommand = new ShellCommand(command);
+        shellCommand.asRoot = false;
+
+        try {
+            // Execute the command
+            Process process = Runtime.getRuntime().exec(command);
+            process.waitFor();
+
+            // Get the execution outputs
+            shellCommand.output    = StringUtils.getStringValue(process.getInputStream()).trim();
+            shellCommand.error     = StringUtils.getStringValue(process.getErrorStream()).trim();
+            shellCommand.exitValue = process.exitValue();
+
+            // Destroy the shell process
+            process.destroy();
+        } catch (Exception e) {
+            shellCommand.localError = e.getMessage();
+        }
+        return shellCommand;
     }
+
 
     /**
      * Execute a shell command as root
-     * @param commands the commands to run
+     * @param commands the commands to runSimpleCommand
      * @return a ShellCommand object containing execution outputs
      */
     public static ShellCommand runAsRoot(String[] commands) {
