@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 /**
  * By FloZone on 22/01/2017.
  */
-public class StringUtils {
+public final class StringUtils {
 
     /**
      * Return true if the string is null or empty

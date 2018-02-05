@@ -17,7 +17,7 @@ import static android.content.Context.WIFI_SERVICE;
  */
 
 @SuppressWarnings("WeakerAccess")
-public class WifiUtils {
+public final class WifiUtils {
 
     public enum WifiState {
         WIFI_OFF,
