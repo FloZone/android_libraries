@@ -8,21 +8,11 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
 import android.os.BatteryManager;
-import android.support.annotation.NonNull;
-import android.util.Log;
-
-import java.math.BigInteger;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.nio.ByteOrder;
+import androidx.annotation.NonNull;
 
 import fr.frodriguez.library.Logger;
 import fr.frodriguez.library.ShellCommand;
-
-import static android.content.Context.WIFI_SERVICE;
 
 /**
  * By FloZone on 22/01/2017.

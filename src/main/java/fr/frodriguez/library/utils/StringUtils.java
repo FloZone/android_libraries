@@ -1,6 +1,6 @@
 package fr.frodriguez.library.utils;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import java.io.BufferedReader;
 import java.io.IOException;
